@@ -13,7 +13,7 @@ namespace StateMachineFun
         public string Message { get; internal set; }
         public string ProductId { get; internal set; }
         public JobState.WorkflowState State => _jobState.State;
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
 
         public JobWorkflow(Guid id, string jobType, JobState.WorkflowState state = default(JobState.WorkflowState))
         {

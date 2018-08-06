@@ -76,6 +76,6 @@ namespace StateMachineFun
         public string ProductId { get; set; }
         public JobState.WorkflowState State { get; set; }
         public string JobType { get; set; }
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
     }
 }

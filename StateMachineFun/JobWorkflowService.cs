@@ -5,6 +5,7 @@ namespace StateMachineFun
     public interface IJobWorkflowService
     {
         Guid Create(string jobType, string productId = null);
+        JobWorkflow Get(Guid jobId);
         void Start(Guid jobId);
         void Complete(Guid jobId);
         void Fail(Guid jobId, string errorMessage);
@@ -25,6 +26,11 @@ namespace StateMachineFun
             {
                 ProductId = productId
             });
+        }
+
+        public JobWorkflow Get(Guid jobId)
+        {
+            return _jobWorkflowRepository.Get(jobId);
         }
 
         public void Start(Guid jobWorkflowId)
